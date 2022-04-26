@@ -8,7 +8,7 @@
  * ********************************************************************************
  * ********** Author     : Sara Salma                               ***************
  * ********** Date       : 04/13/2022                               ***************
- * ********** Version    : 1.0 V                                    ***************
+ * ********** Version    : 2.0 V  (04/26/2020)                      ***************
  * ********** Description: LED_INTERFACINE.h                        ***************
  * **********               Content Proto_Type functions            ***************
  * ********************************************************************************
@@ -21,40 +21,53 @@
 #include "../Include/led_configuration.h"
 
 /*
-function name => LED_INIT
- Argument=> u8
- Return=>void
- Description=> make pin which LED connect with it OUTPUT
- Type=>Proto_Type
+###########################################################################
+#Function Name : LED_VoidInit                                             #
+#Argument      : u8 Local_Pin                                             #
+#Return        : void                                                     #
+#Type          : Proto_Type                                               #
+#Description   : make pin which LED connect with it OUTPUT                #
+###########################################################################
  */
-void LED_INIT(u8 pin);
+
+void LED_VoidLedInit(u8 Local_Pin);
 
 
 /*
-function name => LRD_ON
- Argument=> u8 PIN
- Return=>void
- Description=> make LED on and pin->1
- Type=>Proto_Type
+###########################################################################
+#Function Name : LED_VoidLedOn                                            #
+#Argument      : u8 Local_Pin                                             #
+#Return        : void                                                     #
+#Type          : Proto_Type                                               #
+#Description   : make LED on and pin->1                                   #
+###########################################################################
  */
-void LED_ON(u8 PIN);
+
+void LED_VoidLedOn(u8 Local_Pin);
 
 /*
-function name => LED_OFF
- Argument=> u8 PIN
- Return=>void
- Description=> make LED off and pin(output)->0
- Type=>Proto_Type
+###########################################################################
+#Function Name : LED_VoidLedOff                                           #
+#Argument      : u8 Local_Pin                                             #
+#Return        : void                                                     #
+#Type          : Proto_Type                                               #
+#Description   : make LED off and pin(output)->0                          #
+###########################################################################
  */
-void LED_OFF(u8 PIN);
+
+void LED_VoidLedOff(u8 Local_Pin);
 
 /*
-function name => LED_TOG
- Argument=> u8 PIN
- Return=>void
- Description=> make LED toggle and pin(output)->toggle
- Type=>Proto_Type
+###########################################################################
+#Function Name : LED_VoidLedTog                                           #
+#Argument      : u8 Local_Pin                                             #
+#Return        : void                                                     #
+#Type          : Proto_Type                                               #
+#Description   : make LED toggle and pin(output)->toggle (if led off make #
+#                led on and if led on make led off)                       #
+###########################################################################
  */
-void LED_TOG(u8 PIN);
+
+void LED_VoidLedTog(u8 Local_Pin);
 
 #endif /* HAL_LED_INCLUDE_LED_INTERFACE_H_ */

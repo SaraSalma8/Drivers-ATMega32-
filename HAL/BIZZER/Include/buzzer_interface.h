@@ -23,48 +23,47 @@
 
 
 /*
-function name => BUZZER_INIT
- Argument=> void
- Return=>void
- Description=> make pin which buzzer connect with it OUTPUT
- Type=>Proto_Type
+###########################################################################
+#Function Name : BUZZER_VoidBuzzerInit                                    #
+#Argument      : u8 Local_Pin                                             #
+#Return        : void                                                     #
+#Type          : ProtoType                                                #
+#Description   : make pin which buzzer connect with it OUTPUT             #
+###########################################################################
  */
-void BUZZER_INIT(void);
+
+void BUZZER_VoidBuzzerInit(u8 Local_Pin);
 
 /*
-function name => BUZZER_INIT
- Argument=> u8 PIN
- Return=>void
- Description=> make pin which buzzer connect with it OUTPUT
- Type=>Proto_Type
+###########################################################################
+#Function Name : BUZZER_VoidBuzzerOn                                      #
+#Argument      : u8 Local_Pin                                             #
+#Return        : void                                                     #
+#Type          : ProtoType                                                #
+#Description   : make buzzer On and pin(output)->1                        #
+###########################################################################
  */
-void BUZZER_INITT(u8 PIN);
-
+void BUZZER_VoidBuzzerOn(u8 Local_Pin);
 /*
-function name => BUZZER_ON
- Argument=> u8 PIN
- Return=>void
- Description=> make buzzer on and pin->1
- Type=>Proto_Type
+###########################################################################
+#Function Name : BUZZER_VoidBuzzerOff                                     #
+#Argument      : u8 Local_Pin                                             #
+#Return        : void                                                     #
+#Type          : ProtoType                                                #
+#Description   : make buzzer off and pin(output)->0                       #
+###########################################################################
  */
-void BUZZER_ON(u8 PIN);
-
+void BUZZER_VoidBuzzerOff(u8 Local_Pin);
 /*
-function name => BUZZER_OFF
- Argument=> u8 PIN
- Return=>void
- Description=> make buzzer off and pin(output)->0
- Type=>Proto_Type
+###########################################################################
+#Function Name : BUZZER_VoidBuzzerTog                                     #
+#Argument      : u8 Local_Pin                                             #
+#Return        : void                                                     #
+#Type          :  ProtoType                                               #
+#Description   : make buzzer toggle and pin(output)->toggle               #
+###########################################################################
  */
-void BUZZER_OFF(u8 PIN);
 
-/*
-function name => BUZZER_TOG
- Argument=> u8 PIN
- Return=>void
- Description=> make buzzer toggle and pin(output)->toggle
- Type=>Proto_Type
- */
-void BUZZER_TOG(u8 PIN);
+void BUZZER_VoidBuzzerTog(u8 Local_Pin);
 
 #endif /* HAL_BIZZER_INCLUDE_BUZZER_INTERFACE_H_ */

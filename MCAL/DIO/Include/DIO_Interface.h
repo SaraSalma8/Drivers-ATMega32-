@@ -10,6 +10,17 @@
 #ifndef MCAL_DIO_INCLUDE_DIO_INTERFACE_H_
 #define MCAL_DIO_INCLUDE_DIO_INTERFACE_H_
 
+/*
+ * ********************************************************************************
+ * ********** Author     : Sara Salma                               ***************
+ * ********** Date       : 04/22/2022                               ***************
+ * ********** Version    : 2.0 V (04/26/2020 )                      ***************
+ * ********** Description: DIO_Program.c                            ***************
+ * **********              Proto_Type function                      ***************
+ * ********************************************************************************
+ */
+
+/*include file have typedef variables */
 #include "../../../LIB/STDTYPES.h"
 
 #include"DIO_Configuration.h"
@@ -65,5 +76,18 @@ void DIO_VoidSetPortValue(u8 Local_PORTName, u8 Local_Value);
 #Description   : get pin value in any port                                #                                     #
 ###########################################################################
  */
-u8 DIO_VoidGetPinValue(u8 Local_PORTName, u8 Local_PINNum);
+u8 DIO_U8GetPinValue(u8 Local_PORTName, u8 Local_PINNum);
+
+/*
+###########################################################################
+#Function Name : DIO_VoidTogPinValue                                      #
+#Argument      : u8 Local_PORTName, u8 Local_PINNum                       #
+#Return        : void                                                     #
+#Type          : Proto_Type                                               #
+#Description   : if Pin High make it Low and if Pin Low make it High      #
+###########################################################################
+ */
+
+void DIO_VoidTogPinValue(u8 Local_PORTName, u8 Local_PINNum);
+
 #endif /* MCAL_DIO_INCLUDE_DIO_INTERFACE_H_ */

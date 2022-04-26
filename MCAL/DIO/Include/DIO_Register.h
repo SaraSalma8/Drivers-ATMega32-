@@ -8,6 +8,8 @@
 #ifndef MCAL_DIO_INCLUDE_DIO_REGISTER_H_
 #define MCAL_DIO_INCLUDE_DIO_REGISTER_H_
 
+/*Address from data sheet of Avr (Atmega32)*/
+
 /********************************************Group-A************************************************/
 #define DIO_DDRA_REG       (*(volatile u8*)0x3A)
 #define DIO_PINA_REG       (*(volatile u8*)0x39)

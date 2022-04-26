@@ -15,8 +15,6 @@
  * ********************************************************************************
  */
 
-/*include lib to know address for ports */
-#include<avr/io.h>
 /*include lib to use delay*/
 #include<util/delay.h>
 
@@ -26,197 +24,78 @@
 /*include file have some value i need*/
 #include "../../../LIB/DEFINE.h"
 
-
+/* include peripheral DIO*/
+#include"../../../MCAL/DIO/Include/DIO_Interface.h"
 
 #include "../Include/buzzer_interface.h"
 
+
 /*
-function name => BUZZER_INIT
- Argument=> void
- Return=>void
- Description=> make pin which buzzer connect with it OUTPUT
- Type=>Implementation
+###########################################################################
+#Function Name : BUZZER_VoidBuzzerInit                                    #
+#Argument      : u8 Local_Pin                                             #
+#Return        : void                                                     #
+#Type          : Implementation                                           #
+#Description   : make pin which buzzer connect with it OUTPUT             #
+###########################################################################
  */
-void BUZZER_INIT(void)
+
+void BUZZER_VoidBuzzerInit(u8 Local_Pin)
 {
-  #if Buzzer_Group == GROUP_1
-       #if BUZZER_PIN ==   PIN_ONE
-	      DDRA|=(ONE<<PIN_ONE);
-       #elif BUZZER_PIN ==   PIN_TWO
-	      DDRA|=(ONE<<PIN_TWO);
-       #elif BUZZER_PIN ==   PIN_THREE
-	      DDRA|=(ONE<<PIN_THREE);
-       #elif BUZZER_PIN ==   PIN_FOUR
-	      DDRA|=(ONE<<PIN_FOUR);
-       #elif BUZZER_PIN ==   PIN_FIVE
-	      DDRA|=(ONE<<PIN_FIVE);
-       #elif BUZZER_PIN ==   PIN_SIX
-	      DDRA|=(ONE<<PIN_SIX);
-       #elif BUZZER_PIN ==   PIN_SEVEN
-	      DDRA|=(ONE<<PIN_SEVEN);
-       #elif BUZZER_PIN ==   PIN_EIGHT
-	      DDRA|=(ONE<<PIN_EIGHT);
-       #endif
-
-  #elif Buzzer_Group == GROUP_2
-       #if BUZZER_PIN ==   PIN_ONE
-	      DDRB|=(ONE<<PIN_ONE);
-       #elif BUZZER_PIN ==   PIN_TWO
-	      DDRB|=(ONE<<PIN_TWO);
-       #elif BUZZER_PIN ==   PIN_THREE
-	      DDRB|=(ONE<<PIN_THREE);
-       #elif BUZZER_PIN ==   PIN_FOUR
-	      DDRB|=(ONE<<PIN_FOUR);
-       #elif BUZZER_PIN ==   PIN_FIVE
-	      DDRB|=(ONE<<PIN_FIVE);
-       #elif BUZZER_PIN ==   PIN_SIX
-	      DDRB|=(ONE<<PIN_SIX);
-       #elif BUZZER_PIN ==   PIN_SEVEN
-	      DDRB|=(ONE<<PIN_SEVEN);
-       #elif BUZZER_PIN ==   PIN_EIGHT
-	      DDRB|=(ONE<<PIN_EIGHT);
-       #endif
-
-  #elif Buzzer_Group == GROUP_3
-       #if BUZZER_PIN ==   PIN_ONE
-	      DDRC|=(ONE<<PIN_ONE);
-       #elif BUZZER_PIN ==   PIN_TWO
-	      DDRC|=(ONE<<PIN_TWO);
-       #elif BUZZER_PIN ==   PIN_THREE
-	      DDRC|=(ONE<<PIN_THREE);
-       #elif BUZZER_PIN ==   PIN_FOUR
-	      DDRC|=(ONE<<PIN_FOUR);
-       #elif BUZZER_PIN ==   PIN_FIVE
-	      DDRC|=(ONE<<PIN_FIVE);
-       #elif BUZZER_PIN ==   PIN_SIX
-	      DDRC|=(ONE<<PIN_SIX);
-       #elif BUZZER_PIN ==   PIN_SEVEN
-	      DDRC|=(ONE<<PIN_SEVEN);
-       #elif BUZZER_PIN ==   PIN_EIGHT
-	      DDRC|=(ONE<<PIN_EIGHT);
-       #endif
-
-  #elif Buzzer_Group == GROUP_4
-       #if BUZZER_PIN ==   PIN_ONE
-	      DDRD|=(ONE<<PIN_ONE);
-       #elif BUZZER_PIN ==   PIN_TWO
-	      DDRD|=(ONE<<PIN_TWO);
-       #elif BUZZER_PIN ==   PIN_THREE
-	      DDRD|=(ONE<<PIN_THREE);
-       #elif BUZZER_PIN ==   PIN_FOUR
-	      DDRD|=(ONE<<PIN_FOUR);
-       #elif BUZZER_PIN ==   PIN_FIVE
-	      DDRD|=(ONE<<PIN_FIVE);
-       #elif BUZZER_PIN ==   PIN_SIX
-	      DDRD|=(ONE<<PIN_SIX);
-       #elif BUZZER_PIN ==   PIN_SEVEN
-	      DDRD|=(ONE<<PIN_SEVEN);
-       #elif BUZZER_PIN ==   PIN_EIGHT
-	      DDRD|=(ONE<<PIN_EIGHT);
-       #endif
-
- #endif
+	/*set Pin Connect with buzzer is OUTPUT */
+	DIO_VoidSetPinDir(Buzzer_PORT,Local_Pin,DIO_OUTPUT);
 }
 
 /*
-function name => BUZZER_INITT
- Argument=> u8 BUZZER_PIN
- Return=>void
- Description=> make pin which buzzer connect with it OUTPUT
- Type=>Implementation
+###########################################################################
+#Function Name : BUZZER_VoidBuzzerOn                                      #
+#Argument      : u8 Local_Pin                                             #
+#Return        : void                                                     #
+#Type          : Implementation                                           #
+#Description   : make buzzer On and pin(output)->1                        #
+###########################################################################
  */
-void BUZZER_INITT(u8 PIN)
+void BUZZER_VoidBuzzerOn(u8 Local_Pin)
 {
-#if   Buzzer_Group  ==  GROUP_1
-	DDRA|=(ONE<<PIN);
-#elif Buzzer_Group  ==  GROUP_2
-	DDRB|=(ONE<<PIN);
-#elif Buzzer_Group  ==  GROUP_3
-	DDRC|=(ONE<<PIN);
-#elif Buzzer_Group  ==  GROUP_4
-	DDRD|=(ONE<<PIN);
-#endif
+	/*make pin connect with Buzzer is HIGH */
+	DIO_VoidSetPinValue(Buzzer_PORT,Local_Pin,DIO_HIGH);
 }
-
 /*
-function name => BUZZER_ON
- Argument=> u8 PIN
- Return=>void
- Description=> make buzzer on and pin->1
- Type=>Implementation
+###########################################################################
+#Function Name : BUZZER_VoidBuzzerOff                                     #
+#Argument      : u8 Local_Pin                                             #
+#Return        : void                                                     #
+#Type          : Implementation                                           #
+#Description   : make buzzer off and pin(output)->0                       #
+###########################################################################
  */
-void BUZZER_ON(u8 PIN)
+void BUZZER_VoidBuzzerOff(u8 Local_Pin)
 {
-#if   Buzzer_Group  ==  GROUP_1
-	PORTA|=(ONE<<PIN);
-#elif Buzzer_Group  ==  GROUP_2
-	PORTB|=(ONE<<PIN);
-#elif Buzzer_Group  ==  GROUP_3
-	DDRC|=(ONE<<PIN);
-#elif Buzzer_Group  ==  GROUP_4
-	PORTD|=(ONE<<PIN);
-#endif
+	/*make pin connect with Buzzer is LOW */
+	DIO_VoidSetPinValue(Buzzer_PORT,Local_Pin,DIO_LOW);
 }
-
 /*
-function name => BUZZER_OFF
- Argument=> u8 PIN
- Return=>void
- Description=> make buzzer off and pin(output)->0
- Type=>Implementation
+###########################################################################
+#Function Name : BUZZER_VoidBuzzerTog                                     #
+#Argument      : u8 Local_Pin                                             #
+#Return        : void                                                     #
+#Type          : Implementation                                           #
+#Description   : make buzzer toggle and pin(output)->toggle               #
+###########################################################################
  */
-void BUZZER_OFF(u8 PIN)
-{
-#if   Buzzer_Group  ==  GROUP_1
-	PORTA &=~(ONE<<PIN);
-#elif Buzzer_Group  ==  GROUP_2
-	PORTB &=~(ONE<<PIN);
-#elif Buzzer_Group  ==  GROUP_3
-	DDRC &=~(ONE<<PIN);
-#elif Buzzer_Group  ==  GROUP_4
-	PORTD &=~(ONE<<PIN);
-#endif
-}
 
-/*
-function name => BUZZER_TOG
- Argument=> u8 PIN
- Return=>void
- Description=> make buzzer toggle and pin(output)->toggle
- Type=>Implementation
- */
-void BUZZER_TOG(u8 PIN)
+void BUZZER_VoidBuzzerTog(u8 Local_Pin)
 {
-	u8 counter = ZERO;
-#if   Buzzer_Group  ==  GROUP_1
-	for(counter= START_COUNT ; counter < MAX_TIME ; counter++)
-		{
-	PORTA ^=(ONE<<PIN);
-	_delay_ms(1000);
-	PORTA ^=(ONE<<PIN);
-		}
-#elif Buzzer_Group  ==  GROUP_2
-	for(counter= START_COUNT ; counter < MAX_TIME ; counter++)
-		{
-	PORTB ^=(ONE<<PIN);
-	_delay_ms(1000);
-	PORTB ^=(ONE<<PIN);
-		}
-#elif Buzzer_Group  ==  GROUP_3
-	for(counter= START_COUNT ; counter < MAX_TIME ; counter++)
-		{
-	PORTC ^=(ONE<<PIN);
-	_delay_ms(1000);
-	PORTC ^=(ONE<<PIN);
-		}
-#elif Buzzer_Group  ==  GROUP_4
-	for(counter= START_COUNT ; counter < MAX_TIME ; counter++)
+	/*variable use in for Loop */
+	u8 Local_Counter = ZERO;
+	/*loop for toggle buzzer so once */
+	for (Local_Counter= STARTLOOP ; Local_Counter <TIMES_REAPT ; Local_Counter ++)
 	{
-	PORTD ^=(ONE<<PIN);
-	_delay_ms(1000);
-	PORTD ^=(ONE<<PIN);
-}
-#endif
+		/*Toggle Buzzer Pin */
+		DIO_VoidTogPinValue(Buzzer_PORT,Local_Pin);
+		/*waiting*/
+		_delay_ms(WAIT_TIME);
 
 
+	}
 }

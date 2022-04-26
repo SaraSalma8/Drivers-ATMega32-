@@ -11,7 +11,7 @@
  * ********** Author     : Sara Salma                               ***************
  * ********** Date       : 04/12/2022                               ***************
  * ********** Version    : 1.0 V                                    ***************
- * ********** Description: BUZZER_CONFIGURATION.h                      ***************
+ * ********** Description: BUZZER_CONFIGURATION.h                   ***************
  * **********                                                       ***************
  * ********************************************************************************
  */
@@ -22,10 +22,18 @@
 
 #include "buzzer_privte.h"
 
-#define Buzzer_Group    GROUP_4
+
+/*define Buzzer PORT & PIN */
+#define Buzzer_PORT    PORT_A
 #define BUZZER_PIN      PIN_THREE
 
-#define START_COUNT  0
-#define MAX_TIME     10
+
+/*waiting time use in function  BUZZER_VoidBuzzerTog() */
+#define WAIT_TIME     1000
+
+
+#define STARTLOOP     0
+/*define number time i Want buzzer to toggle*/
+#define TIMES_REAPT   10
 
 #endif /* HAL_BIZZER_INCLUDE_BUZZER_CONFIGURATION_H_ */

@@ -4,6 +4,18 @@
  *  Created on: Apr 24, 2022
  *      Author: raya
  */
+
+
+/*
+ * ********************************************************************************
+ * ********** Author     : Sara Salma                               ***************
+ * ********** Date       : 04/20/2022                               ***************
+ * ********** Version    : 1.0 V (04/20/2020 )                      ***************
+ * ********** Description: KEYPAD_Configuration.h                   ***************
+ * ********************************************************************************
+ */
+
+
 /*garden to define KEYPAD Configuration if not define */
 #ifndef HAL_KEYPAD_INCLUDE_KEYPAD_CONFIGURATION_H_
 #define HAL_KEYPAD_INCLUDE_KEYPAD_CONFIGURATION_H_
@@ -12,7 +24,7 @@
 /*design must be in the same port first 4 bits for columns */
 #define KEYPAD_PORT        PORT_B
 
-
+/*define Number of Rows and Columns in Keypad*/
 #define COlUMN_NUM           4
 #define ROW_NUM              4
 

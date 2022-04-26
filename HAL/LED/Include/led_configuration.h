@@ -22,10 +22,13 @@
 #include "../Include/led_privte.h"
 
 /*define group*/
-#define LED_Group    GROUP_2
-#define RED_LED      PIN_TWO
-#define GREEN_LED    PIN_ONE
-#define YELLOW_LED   PIN_THREE
+#define LED_Group    PORT_A
+
+/*define Leds*/
+
+#define RED_LED      PIN_A0
+#define GREEN_LED    PIN_A1
+#define YELLOW_LED   PIN_A2
 
 
 #endif /* HAL_LED_INCLUDE_LED_CONFIGURATION_H_ */
