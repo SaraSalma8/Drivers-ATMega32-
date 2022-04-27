@@ -17,12 +17,10 @@
 
 
 /*include LIB for use Delay */
-#include<util/delay.h>
+#include <util/delay.h>
 
 /*include file have typedef variables */
 #include"../../../LIB/STDTYPES.h"
-/* include file have function like macro i need*/
-#include"../../../LIB/Bit_Math.h"
 /* include file have some values i need */
 #include"../../../LIB/DEFINE.h"
 

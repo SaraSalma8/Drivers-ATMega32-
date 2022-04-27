@@ -4,6 +4,17 @@
  *  Created on: Apr 23, 2022
  *      Author: raya
  */
+
+/*
+ * ********************************************************************************
+ * ********** Author     : Sara Salma                               ***************
+ * ********** Date       : 04/21/2022                               ***************
+ * ********** Version    : 1.0 V                                    ***************
+ * ********** Description: LCD_CONFIGURATION.h                   ***************
+ * **********                                                       ***************
+ * ********************************************************************************
+ */
+
 /*garden to define LCD Configuration if not define */
 #ifndef HAL_LCD_INCLUDE_LCD_CONFIGURATION_H_
 #define HAL_LCD_INCLUDE_LCD_CONFIGURATION_H_
