@@ -20,15 +20,16 @@
 
 /*include led private to know which port used*/
 #include "../Include/led_privte.h"
-
+#include "../../../MCAL/DIO/Include/DIO_Private.h"
 /*define group*/
-#define LED_Group    PORT_A
+#define LED_Group    PORT_B
 
 /*define Leds*/
 
-#define RED_LED      PIN_A0
-#define GREEN_LED    PIN_A1
-#define YELLOW_LED   PIN_A2
+#define RED_LED       PIN_B3
+#define YELLOW_LED    PIN_A1
+#define GREEN_LED     PIN_A2
+#define RED2_LED      PIN_A3
 
 
 #endif /* HAL_LED_INCLUDE_LED_CONFIGURATION_H_ */

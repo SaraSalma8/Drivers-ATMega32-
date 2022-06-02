@@ -29,6 +29,8 @@
 /* include peripheral DIO*/
 #include"../../../MCAL/DIO/Include/DIO_Interface.h"
 
+#include"../../../MCAL/TIMER0/Include/TIMER0_Interface.h"
+
 #include "../Include/led_interface.h"
 
 
@@ -108,4 +110,10 @@ void LED_VoidLedTog(u8 Local_Pin)
 		/*make led off */
 		DIO_VoidSetPinValue(LED_Group,Local_Pin,DIO_LOW);
 	}
+}
+void LED_Light(u8 Local_Light){
+
+	TIMER0_VoidPWMInit();
+	TIMER0_SpeedPWM(Local_Light);
+
 }
