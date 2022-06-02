@@ -24,8 +24,8 @@
 
 
 /*define Buzzer PORT & PIN */
-#define Buzzer_PORT    PORT_A
-#define BUZZER_PIN      PIN_THREE
+#define Buzzer_PORT     PORT_B
+#define BUZZER_PIN      PIN_B7
 
 
 /*waiting time use in function  BUZZER_VoidBuzzerTog() */
