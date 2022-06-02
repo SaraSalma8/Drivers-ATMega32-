@@ -6,23 +6,27 @@
  *      Author: raya
  */
 
-/*garden to define DIO interface if not define */
-#ifndef MCAL_DIO_INCLUDE_DIO_INTERFACE_H_
-#define MCAL_DIO_INCLUDE_DIO_INTERFACE_H_
-
 /*
  * ********************************************************************************
  * ********** Author     : Sara Salma                               ***************
  * ********** Date       : 04/22/2022                               ***************
- * ********** Version    : 2.0 V (04/26/2020 )                      ***************
- * ********** Description: DIO_Program.c                            ***************
+ * ********** Version    : 2.0 V (04/26/2022)                       ***************
+ * ********** Description: DIO_Interface.h                          ***************
  * **********              Proto_Type function                      ***************
  * ********************************************************************************
  */
 
+/*garden to define DIO interface if not define */
+#ifndef MCAL_DIO_INCLUDE_DIO_INTERFACE_H_
+#define MCAL_DIO_INCLUDE_DIO_INTERFACE_H_
+
+
+
 /*include file have typedef variables */
 #include "../../../LIB/STDTYPES.h"
 
+
+#include"DIO_Private.h"
 #include"DIO_Configuration.h"
 /*
 ###########################################################################

@@ -4,6 +4,20 @@
  *  Created on: Apr 22, 2022
  *      Author: raya
  */
+
+
+/*
+ * ********************************************************************************
+ * ********** Author     : Sara Salma                               ***************
+ * ********** Date       : 04/22/2022                               ***************
+ * ********** Version    : 2.0 V (04/26/2022)                       ***************
+ * ********** Description: DIO_Register.h                           ***************
+ * **********              Address of Registers                     ***************
+ * ********************************************************************************
+ */
+
+
+
 /*garden to define DIO Register if not define */
 #ifndef MCAL_DIO_INCLUDE_DIO_REGISTER_H_
 #define MCAL_DIO_INCLUDE_DIO_REGISTER_H_
