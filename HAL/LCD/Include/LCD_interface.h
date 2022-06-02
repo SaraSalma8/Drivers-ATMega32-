@@ -52,4 +52,23 @@ void LCD_VoidSendChar(u8 Local_Char);
 ###########################################################################
  */
 void LCD_Void_Init(void);
+
+/*
+###########################################################################
+#Function Name : LCD_VoidSendString                                       #
+#Argument      : pointer to char                                          #
+#Return        : void                                                     #
+#Type          : Proto_Type                                               #
+#Description   : Display String                                           #
+###########################################################################
+ */
+
+void LCD_VoidSendString(u8* Ptr_String);
+
+
+void LCD_VoidGoToXY(u8 Local_XPosition, u8 Local_YPosition);
+
+
+void LCD_voidsendmorenumber(u32 copy_u32number);
+
 #endif /* HAL_LCD_INCLUDE_LCD_INTERFACE_H_ */

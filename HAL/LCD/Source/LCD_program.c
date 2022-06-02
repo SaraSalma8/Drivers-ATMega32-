@@ -124,7 +124,7 @@ void LCD_Void_Init(void)
 #Argument      : pointer to char                                          #
 #Return        : void                                                     #
 #Type          : Implementation                                           #
-#Description   : initialization                                           #
+#Description   : Display String                                           #
 ###########################################################################
  */
 
@@ -141,3 +141,63 @@ void LCD_VoidSendString(u8* Ptr_String)
 
 	}
 }
+
+
+
+
+
+
+void LCD_VoidGoToXY(u8 Local_XPosition, u8 Local_YPosition)
+{
+	u8 Local_Address = ZERO;
+	if(Local_XPosition == ZERO)
+	{
+		Local_Address = Local_YPosition;
+
+	}
+	else if (Local_XPosition == ONE)
+	{
+		Local_Address = Local_YPosition + 0x40;
+	}
+	LCD_VoidSendCom(Local_Address + 128);
+}
+
+
+void LCD_VoidCGRAM(u8 Local_Position, u8 *pattern)
+{
+	u8 Local_Address = ZERO;
+	u8 Local_Counter = ZERO;
+	Local_Address= Local_Position*8;
+	for (Local_Counter = 0 ; Local_Counter< 8 ; Local_Counter ++){
+		LCD_VoidSendCom(Local_Position + 64 + (Local_Counter*2));
+		LCD_VoidSendChar(pattern[Local_Counter]);
+	}
+	LCD_VoidGoToXY(0,0);
+
+	//LCD_VoidSendChar(pattern)
+
+
+}
+
+
+void LCD_voidsendmorenumber(u32 copy_u32number)
+{
+	u32 Reversenum =1;
+
+	if (copy_u32number==0){
+		LCD_VoidSendChar('0');
+	}
+	else {
+	while (copy_u32number !=0){
+		Reversenum = (Reversenum * 10 )+ ( copy_u32number % 10);
+		copy_u32number /= 10 ;
+	}
+	while (Reversenum != 1){
+		LCD_VoidSendChar((Reversenum % 10) +48);
+		Reversenum /= 10;
+	}
+
+
+	}
+}
+
